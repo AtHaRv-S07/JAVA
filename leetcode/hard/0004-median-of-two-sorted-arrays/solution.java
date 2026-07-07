@@ -14,7 +14,7 @@ class Solution {
         double median;
         if((m+n)%2==0)
         {
-            median=(nums3[(l/2)-1]+nums3[l/2])/2;
+            median=(nums3[(l/2)-1]+nums3[l/2])/2.0;
         }
         else{
             median=nums3[(l+1)/2];
