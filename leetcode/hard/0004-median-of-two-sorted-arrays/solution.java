@@ -10,14 +10,14 @@ class Solution {
         for (int i = 0; i < n; i++) {
             nums3[m + i] = nums2[i];
         }
-
+        Arrays.sort(nums3);
         double median;
         if((m+n)%2==0)
         {
             median=(nums3[(l/2)-1]+nums3[l/2])/2.0;
         }
         else{
-            median=nums3[(l+1)/2];
+            median=nums3[l/2];
         }
         return median;
     }
