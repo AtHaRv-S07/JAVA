@@ -5,7 +5,7 @@ class Solution {
         int mid=(first+last)/2;
         
         if(nums[mid]==target){
-            return nums[mid];
+            return mid;
         }
         else if(nums[mid]>target){
                 last=mid-1;
