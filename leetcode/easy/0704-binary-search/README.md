@@ -40,9 +40,9 @@ Explanation: 2 does not exist in nums so return -1
 ## Solution
 
 **Language:** Java  
-**Runtime:** 0 ms  
-**Memory:** 42.8 MB  
-**Submitted:** 2026-07-08T18:01:10.760Z  
+**Runtime:** 0 ms (beats 100.00%)  
+**Memory:** 48.4 MB (beats 49.95%)  
+**Submitted:** 2026-07-08T18:04:02.703Z  
 
 ```java
 class Solution {
@@ -52,7 +52,7 @@ class Solution {
         int mid=(first+last)/2;
         
         if(nums[mid]==target){
-            return nums[mid];
+            return mid;
         }
         else if(nums[mid]>target){
                 last=mid-1;
