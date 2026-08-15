@@ -1,4 +1,4 @@
-# Plus Minus
+# Staircase
 
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-yellow)
 
@@ -43,7 +43,7 @@ $-100 \le arr[i] \le 100$
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-08-15T13:35:49.342Z  
+**Submitted:** 2026-08-15T14:09:29.962Z  
 
 ```java
 import java.io.*;
@@ -61,29 +61,22 @@ import static java.util.stream.Collectors.toList;
 class Result {
 
     /*
-     * Complete the 'plusMinus' function below.
+     * Complete the 'staircase' function below.
      *
-     * The function accepts INTEGER_ARRAY arr as parameter.
+     * The function accepts INTEGER n as parameter.
      */
 
-    public static void plusMinus(List<Integer> arr) {
+    public static void staircase(int n) {
     // Write your code here
-    float pos=0,neg=0,zero=0;
-    int n=arr.size();
-    for(int i=0;i<n;i++){
-        if(arr.get(i)>0){
-            pos+=1;
+    for(int i=1;i<=n;i++){
+        for(int j=0;j<n-i;j++){
+            System.out.print(" ");
         }
-        else if(arr.get(i)<0){
-            neg+=1;
+        for(int k=0;k<i;k++){
+            System.out.print("#");
         }
-        else if(arr.get(i)==0){
-            zero+=1;
-        }
+        System.out.println();
     }
-    System.out.println(pos/n);
-    System.out.println(neg/n);
-    System.out.println(zero/n);
     }
 
 }
@@ -94,11 +87,7 @@ public class Solution {
 
         int n = Integer.parseInt(bufferedReader.readLine().trim());
 
-        List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
-
-        Result.plusMinus(arr);
+        Result.staircase(n);
 
         bufferedReader.close();
     }
