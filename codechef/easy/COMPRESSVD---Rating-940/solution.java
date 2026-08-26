@@ -1,38 +1,26 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        // BufferedReader and StringTokenizer provide fast I/O to prevent TLE
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-
-        String line = br.readLine();
-        if (line == null || line.trim().isEmpty()) return;
-
-        int t = Integer.parseInt(line.trim()); // Number of test cases
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt();
 
         while (t-- > 0) {
-            int n = Integer.parseInt(br.readLine().trim()); // Number of frames
+            int n = scanner.nextInt();
+            int[] frames = new int[n];
+            for (int i = 0; i < n; i++) {
+                frames[i] = scanner.nextInt();
+            }
 
-            st = new StringTokenizer(br.readLine());
-
-            // Read the first frame
-            int prev = Integer.parseInt(st.nextToken());
-            int finalFrameCount = 1;
-
-            // Process remaining frames on the fly in O(1) space
-            for (int i = 1; i < n; i++) {
-                int current = Integer.parseInt(st.nextToken());
-                if (current != prev) {
-                    finalFrameCount++;
-                    prev = current; // Update tracking pointer
+            int minFrames = n;
+            for (int i = 0; i < n - 1; i++) {
+                if (frames[i] == frames[i + 1]) {
+                    minFrames--;
                 }
             }
 
-            System.out.println(finalFrameCount);
+            System.out.println(minFrames);
         }
+        scanner.close();
     }
 }
