@@ -46,9 +46,9 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 ## Solution
 
 **Language:** Java  
-**Runtime:** 67 ms (beats 31.87%)  
-**Memory:** 47.6 MB (beats 89.74%)  
-**Submitted:** 2026-09-26T17:50:14.442Z  
+**Runtime:** 66 ms (beats 40.43%)  
+**Memory:** 47.8 MB (beats 73.89%)  
+**Submitted:** 2026-09-26T17:50:44.367Z  
 
 ```java
 class Solution {
@@ -56,22 +56,21 @@ class Solution {
         int left = 0;
         int maxLength = 0;
         
-        // HashSet stores characters in the current window
         Set<Character> charSet = new HashSet<>();
 
-        // Expand the window with 'right' pointer
+        
         for (int right = 0; right < s.length(); right++) {
             
-            // If duplicate found, shrink window from 'left' until duplicate is removed
+            
             while (charSet.contains(s.charAt(right))) {
                 charSet.remove(s.charAt(left));
                 left++;
             }
 
-            // Add current character to set
+            
             charSet.add(s.charAt(right));
 
-            // Window size is (right - left + 1)
+            
             maxLength = Math.max(maxLength, right - left + 1);
         }
 
