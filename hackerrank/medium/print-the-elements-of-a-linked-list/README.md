@@ -41,7 +41,7 @@ The next $n$ lines contain one element each, the $data$ values for each node.
 **Language:** Java  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T05:19:12.764Z  
+**Submitted:** 2026-10-13T05:19:23.362Z  
 
 ```java
 
